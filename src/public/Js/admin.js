@@ -56,3 +56,7 @@ courserBtn.addEventListener('click', () => {
   
 // }
 
+window.onload = () => {
+  let loader = document.getElementById('loader');
+  loader.style.display = "none"
+}
