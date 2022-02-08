@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "groupname": "NT-70",
+    "coursename": "Web-Programming",
+    "teachername": "Baxtiyor"
+  },
+  {
+    "id": 2,
+    "groupname": "arabic-NT01",
+    "coursename": "Arabic",
+    "teachername": "Alisher"
+  }
+]

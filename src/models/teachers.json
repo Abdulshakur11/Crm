@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "username": "Baxtiyor",
+    "phone_number": "998909990809",
+    "gender": "male",
+    "course": "Web-Programming",
+    "password": "998909990809",
+    "role": "teacher"
+  },
+  {
+    "id": 2,
+    "username": "Alisher",
+    "phone_number": "+998912220201",
+    "gender": "male",
+    "course": "Arabic",
+    "password": "+998912220201",
+    "role": "teacher"
+  }
+]

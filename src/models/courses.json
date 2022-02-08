@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "coursename": "Arabic ",
+    "price": "650 000"
+  },
+  {
+    "id": 2,
+    "coursename": "Web-Programming",
+    "price": "700 000"
+  }
+]

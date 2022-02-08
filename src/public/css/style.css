@@ -1,0 +1,220 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.btn-wrapper {
+  width: 100%;
+  height: 70vh;
+  max-width: 250px;
+  padding-left: 10px;
+  margin-left: 10px;
+  border-right: 1px solid #333;
+  padding-right: 20px;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.left-btn {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+.input {
+  display: block;
+  margin-top: 15px;
+}
+
+.add-btn {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 145px;
+  z-index: 5;
+}
+
+.home {
+  display: flex;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+}
+thead tr{
+  background-color: rgb(58, 56, 56);
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+tbody tr{
+  background-color: rgb(42, 193, 253);
+}
+tbody tr td a {
+  color: #333;
+  text-decoration: none;
+}
+
+tr th:first-child {
+  border-top-left-radius: 10px;
+}
+
+tr th:last-child {
+  border-top-right-radius: 10px;
+}
+
+
+.home__content {
+  width: 68%;
+  height: 80vh;
+  overflow: auto;
+  background-color: rgba(51, 51, 51, 0.144);
+  margin-right: auto;
+  padding: 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.table-title {
+  font-weight: 600;
+}
+
+.td {
+  text-transform: capitalize;
+}
+
+.options {
+  text-transform: capitalize;
+}
+
+.select-text {
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.course-list {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.course-item {
+  width: 100%;
+  max-width: 200px;
+  background-color: #bfdaf3;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #333;
+  border: 1px solid #222;
+  margin: 10px;
+  transition: all 0.2s ease;
+}
+
+.course-item:hover{
+  box-shadow: none;
+}
+
+.course-title {
+  text-transform: capitalize;
+  
+}
+
+.course-price {
+  text-transform: capitalize;
+  
+}
+
+.username {
+  color: blue;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.add-homework-btn {
+  position: absolute;
+  right: 25px;
+}
+
+.textarea {
+  width: 466px;
+  margin-top: 15px;
+  padding: 8px;
+}
+
+.modal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#student-table {
+  display: none;
+}
+
+#groups-table {
+  display: none;
+}
+
+#courses-table {
+  display: none;
+}
+
+#student-table-first{
+  display: none;
+}
+
+#homeworks-table {
+  display: none;
+}
+
+.homework-list-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+  border-top: 1px solid #333;
+  background-color: rgb(58, 56, 56);
+  color: #fff;
+}
+
+.homework-item-nav {
+  font-size: 25px;
+}
+
+
+.homework-list {
+  list-style-type: none;
+}
+
+.homework-item {
+  position: relative;
+  font-size: 20px;
+  width: 450px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: rgb(106, 210, 252);
+}
+
+.list-wrapper {
+  display: flex;
+}
+

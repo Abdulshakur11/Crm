@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<title>CRM || Admin</title>
+	</head>
+	<body>
+		<div class="title-wrapper">
+			<h1 class="title">
+				<strong>AbuDev</strong><br />center of modern professions
+			</h1>
+		</div>
+		<div class="home">
+			<div class="btn-wrapper">
+				<button class="btn btn-outline-primary left-btn teachers">Teachers</button>
+				<button class="btn btn-outline-primary left-btn students">Students</button>
+				<button class="btn btn-outline-primary left-btn groups">Groups</button>
+				<button class="btn btn-outline-primary left-btn courses">Courses</button>
+			</div>
+
+			<div class="home__content">
+				<!-- Teachers table -->
+				<div id="teacher-table">
+					<h3>Teachers</h3>
+					<table class="table">
+						<thead class="table-dark">
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>Phone number</th>
+								<th>Course</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(let teacher of teachers) { %>
+							<tr>
+								<td><%= teacher.id%></td>
+								<td class="td"><%= teacher.username%></td>
+								<td><a href='tel:<%= teacher.phone_number%>'>
+									<%= teacher.phone_number%>
+								</a></td>
+								<td class="td"><%= teacher.course%></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+					<button
+						type="button"
+						class="btn btn-primary add-btn"
+						data-bs-toggle="modal"
+						data-bs-target="#exampleModal"
+					>
+						Add teacher
+					</button>
+					<!-- Modal -->
+					<div
+						class="modal fade"
+						id="exampleModal"
+						tabindex="-1"
+						aria-labelledby="exampleModalLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Add teacher</h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"
+									></button>
+								</div>
+								<form action="/addteachers" method="post">
+								<div class="modal-body">
+										<input
+											class="form-control input"
+											type="text"
+											placeholder="Name"
+											name="username"
+											required
+										/>
+										<input
+											class="form-control input"
+											type="text"
+											placeholder="Phone number"
+											name="phone_number"
+											required
+										/>
+										<input
+											class="form-control input"
+											type="date"
+										/>
+										<p>Jinsi</p>
+
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male" checked>
+											<label class="form-check-label" for="exampleRadios1">
+												Male
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female">
+											<label class="form-check-label" for="exampleRadios2">
+												Female
+											</label>
+										</div>
+
+										<p class="select-text">Choose course</p>
+										<select class="form-select" name="course">
+											<option selected disabled hidden>Choose course</option>
+											<% for(let course of courses) { %> 
+											<option class="options" value=<%= course.coursename %>><%= course.coursename %></option>
+											<% } %> 
+										</select>
+								</div>
+								<div class="modal-footer">
+									<button
+										type="button"
+										class="btn btn-secondary"
+										data-bs-dismiss="modal"
+									>
+										Close
+									</button>
+									<button type="submit" class="btn btn-primary">Save changes</button>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Students table -->
+				<div id="student-table">
+					<h3>Students</h3>
+					<table class="table">
+						<thead class="table-dark">
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>Phone number</th>
+								<th>Group name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(let student of students) { %>
+							<tr>
+								<td><%= student.id%></td>
+								<td class="td"><%= student.username%></td>
+								<td>
+									<a href="tel:<%= student.phone_number%>"><%= student.phone_number%></a>
+								</td>
+								<td><%= student.groupname%></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+
+					<button
+						type="button"
+						class="btn btn-primary add-btn"
+						data-bs-toggle="modal"
+						data-bs-target="#students-modal"
+					>
+					 Add student
+					</button>
+					<!-- Modal -->
+					<div
+						class="modal fade"
+						id="students-modal"
+						tabindex="-1"
+						aria-labelledby="exampleModalLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Add student</h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"
+									></button>
+								</div>
+
+								<form action="/addstudents" method="post">
+									<div class="modal-body">
+											<input
+												class="form-control input"
+												type="text"
+												placeholder="Name"
+												name="username"
+												required
+											/>
+											<input
+												class="form-control input"
+												type="text"
+												placeholder="Phone number"
+												name="phone_number"
+												required
+											/>
+											<input
+												class="form-control input"
+												type="date"
+											/>
+
+											<p class="select-text">Choose course</p>
+											<select class="form-select course-select" name="course">
+												<option selected disabled hidden>Choose course</option>
+												<% for(let course of courses) { %> 
+												<option class="options" value=<%= course.coursename %>><%= course.coursename %></option>
+												<% } %>
+
+											</select>
+
+											<p class="select-text">Choose groupe</p>
+											<select class="form-select" name="groupname" >
+												<option selected disabled hidden>Choose group</option>
+												<% for(let group of groups) { %> 
+												<option class="options" value=<%= group.groupname %>><%= group.groupname %></option>
+												<% } %> 
+											</select>
+
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-bs-dismiss="modal"
+										>
+											Close
+										</button>
+										<button type="submit" class="btn btn-primary">Save changes</button>
+									</div>
+							</form>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- Groups table -->
+				<div id="groups-table">
+					<h3>Groups</h3>
+					<table class="table">
+						<thead class="table-dark">
+							<tr>
+								<th>Group name</th>
+								<th>Course name</th>
+								<th>Teacher name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(let group of groups) { %>
+							<tr>
+								<td class="td"><%= group.groupname%></td>
+								<td><%= group.coursename%></td>
+								<td class="td"><%= group.teachername%></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+					<button
+						type="button"
+						class="btn btn-primary add-btn"
+						data-bs-toggle="modal"
+						data-bs-target="#groups-modal"
+					>
+						Add group
+					</button>
+					<!-- Modal -->
+					<div
+						class="modal fade"
+						id="groups-modal"
+						tabindex="-1"
+						aria-labelledby="exampleModalLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">O'qituvchi qo'shish</h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"
+									></button>
+								</div>
+							<form action="/addgroups" method="post">
+								<div class="modal-body">
+										<input
+											class="form-control input"
+											type="text"
+											placeholder="Group name"
+											name="groupname"
+											required
+										/>
+
+										<p class="select-text">Choose course</p>
+										<select class="form-select" name="coursename" id="">
+											<option selected disabled hidden>Choose course</option>
+											<% for(let course of courses) { %> 
+											<option class="options" value=<%= course.coursename %>><%= course.coursename %></option>
+											<% } %> 
+										</select>
+
+										<p class="select-text">Choose teacher</p>
+										<select class="form-select" name="teachername" id="">
+											<option selected disabled hidden>Choose teacher</option>
+											<% for(let teacher of teachers) { %> 
+											<option class="options" value=<%= teacher.username %>><%= teacher.username %></option>
+											<% } %> 
+										</select>
+								</div>
+								<div class="modal-footer">
+									<button
+										type="button"
+										class="btn btn-secondary"
+										data-bs-dismiss="modal"
+									>
+										Close
+									</button>
+									<button type="submit" class="btn btn-primary">Save changes</button>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<!-- Courses table -->
+				<div id="courses-table">
+					<h3>Courses</h3>
+					<ul class="course-list">
+						<% for(let course of courses) { %>
+						<li class="course-item">
+							<h5 class="course-title"><%= course.coursename %></h5>
+							<h5 class="course-price"><%= course.price %>so'm</h5>
+						</li>
+						<% } %>
+					</ul>
+					<button
+						type="button"
+						class="btn btn-primary add-btn"
+						data-bs-toggle="modal"
+						data-bs-target="#course-modal"
+					>
+						Add course
+					</button>
+					<!-- Modal -->
+					<div
+						class="modal fade"
+						id="course-modal"
+						tabindex="-1"
+						aria-labelledby="exampleModalLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">O'qituvchi qo'shish</h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"
+									></button>
+								</div>
+							<!--Belowe add course form post -->
+							<form action="/addcourses" method="post">
+								<div class="modal-body">
+										<input
+											class="form-control input"
+											type="text"
+											placeholder="Course name"
+											name="coursename"
+											required
+										/>
+
+										<input class="form-control input" type="text"placeholder="Course prize" name="price" required>
+
+								</div>
+								<div class="modal-footer">
+									<button
+										type="button"
+										class="btn btn-secondary"
+										data-bs-dismiss="modal"
+									>
+										Close
+									</button>
+									<button type="submit" class="btn btn-primary">Save changes</button>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<script src="assets/Js/admin.js"></script>
+	</body>
+</html>

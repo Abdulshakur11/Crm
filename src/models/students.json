@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "Rozivoy",
+    "phone_number": "9982061452",
+    "course": "Web-Programming",
+    "groupname": "NT-70",
+    "password": "9982061452",
+    "role": "student"
+  },
+  {
+    "id": 2,
+    "username": "Shoxjahon",
+    "phone_number": "998939718475",
+    "course": "Web-Programming",
+    "groupname": "NT-70",
+    "password": "998939718475",
+    "role": "student"
+  },
+  {
+    "id": 3,
+    "username": "Jumavoy",
+    "phone_number": "+998998887799",
+    "course": "Arabic",
+    "groupname": "arabic-NT01",
+    "password": "+998998887799",
+    "role": "student"
+  },
+  {
+    "id": 4,
+    "username": "Ikrom",
+    "phone_number": "+998952365578",
+    "course": "Arabic",
+    "groupname": "arabic-NT01",
+    "password": "+998952365578",
+    "role": "student"
+  }
+]
