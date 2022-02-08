@@ -10,8 +10,13 @@ module.exports = {
     const { token } = req.cookies;
     const {role, username} = verifyUser(token);
     if(role != "student") {
-      res.clearCookie('token');
-      return res.redirect('/')
+      if(role == "admin") {
+				return res.redirect('/admin')
+			} else if(role == "student") {
+				return res.redirect('/students')
+			}else if(role == "teacher") {
+				return res.redirect('/students')
+			}
     } else {
       const allStudents = JSON.parse(students.read());
       const allGroups = JSON.parse(groups.read());

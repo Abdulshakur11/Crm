@@ -12,8 +12,13 @@ module.exports = {
 		const { role } = verifyUser(token);
 
 		if (role != "admin") {
-			res.clearCookie("token");
-			return res.redirect("/");
+			if(role == "admin") {
+				return res.redirect('/admin')
+			} else if(role == "student") {
+				return res.redirect('/students')
+			}else if(role == "teacher") {
+				return res.redirect('/students')
+			}
 		} else {
 			//
 			const allTeachers = JSON.parse(teachers.read());
