@@ -10,5 +10,11 @@
     "groupname": "arabic-NT01",
     "coursename": "Arabic",
     "teachername": "Alisher"
+  },
+  {
+    "id": 3,
+    "groupname": "Arabic-NT02",
+    "coursename": "Arabic",
+    "teachername": "Alisher"
   }
 ]

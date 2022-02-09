@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
+const fs = require('fs');
 
 //Middalewares
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -24,5 +26,13 @@ router
      .post('/addgroups', GROUPS_POST)
      .post('/addcourses', COURSES_POST)
      .post('/sendhomework', HOMEWORKS_POST)
+     .get('/api', (_, res) => {
+       const allGroups = fs.readFileSync(path.resolve(__dirname, "../models/groups.json"));
+       res.send(JSON.parse(allGroups));
+     })
+     .get('/api/v2', (_, res) => {
+      const allTeachers = fs.readFileSync(path.resolve(__dirname, "../models/teachers.json"));
+      res.send(JSON.parse(allTeachers));
+    })
 
 module.exports = router;

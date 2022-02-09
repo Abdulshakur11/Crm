@@ -34,5 +34,14 @@
     "groupname": "arabic-NT01",
     "password": "+998952365578",
     "role": "student"
+  },
+  {
+    "id": 5,
+    "username": "Xoshim",
+    "phone_number": "+9985698745",
+    "course": "Arabic",
+    "groupname": "Arabic-NT02",
+    "password": "+9985698745",
+    "role": "student"
   }
 ]

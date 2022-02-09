@@ -8,5 +8,10 @@
     "id": 2,
     "coursename": "Web-Programming",
     "price": "700 000"
+  },
+  {
+    "id": 3,
+    "coursename": "english",
+    "price": "1200000"
   }
 ]
