@@ -26,6 +26,7 @@ router
      .post('/addgroups', GROUPS_POST)
      .post('/addcourses', COURSES_POST)
      .post('/sendhomework', HOMEWORKS_POST)
+     
      .get('/api', (_, res) => {
        const allGroups = fs.readFileSync(path.resolve(__dirname, "../models/groups.json"));
        res.send(JSON.parse(allGroups));

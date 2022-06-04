@@ -5,7 +5,6 @@ const admins = new Fs('../models/admin.json');
 const teachers = new Fs('../models/teachers.json'); 
 const students = new Fs('../models/students.json'); 
 
-
 module.exports = (req, res, next) => {
   try{
     const { username, password } = req.body;

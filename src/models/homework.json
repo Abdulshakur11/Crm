@@ -4,5 +4,11 @@
     "homeworke_theme": "Homework",
     "homework_description": "Expressda server ko'tarib kelish",
     "groupname": "NT-70"
+  },
+  {
+    "id": 2,
+    "homeworke_theme": "GraphQl ",
+    "homework_description": "GraphQl'da chat qilib kelish unda privat chat ham bo'lsin. Savollar bo'lsa yozamiz",
+    "groupname": "NT-70"
   }
 ]

@@ -1,8 +1,8 @@
 [
 	{
 		"id": 1,
-		"username": "abdushukur",
-		"password": "1",
+		"username": "admin",
+		"password": "admin",
 		"role": "admin",
 		"gender": "male",
 		"phone_number": "998911170721"

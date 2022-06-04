@@ -218,3 +218,8 @@ tr th:last-child {
   display: flex;
 }
 
+#log-out {
+  position: absolute;
+  left: 20px;
+  bottom: 330px;
+}

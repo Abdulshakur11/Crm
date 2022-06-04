@@ -3,6 +3,7 @@ const teachersBtn = document.querySelector(".teachers");
 const studentsBtn = document.querySelector(".students");
 const groupsBtn = document.querySelector(".groups");
 const courserBtn = document.querySelector(".courses");
+const deleteAllCookiesBtn = document.getElementById("log-out");
 
 //Tables
 const teachers = document.getElementById("teacher-table");
@@ -88,3 +89,17 @@ courseSelectGr.addEventListener("change", (e) => {
 			}
 		});
 });
+
+function deleteAllCookies() {
+	var cookies = document.cookie.split(";");
+	for (var i = 0; i < cookies.length; i++) {
+		var cookie = cookies[i];
+		var eqPos = cookie.indexOf("=");
+		var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+	}
+}
+
+deleteAllCookiesBtn.onclick = () => {
+	deleteAllCookies();
+};
